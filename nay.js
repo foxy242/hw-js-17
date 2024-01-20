@@ -1,48 +1,32 @@
 // task 1
 
-// let users = [
-//   { ownerName: "Georgiy Chikilyov", accountNumber: "F6G7D0", balance: 4720988769 },
-//   { ownerName: "Tatiana Chikilyov", accountNumber: "F97G9R", balance: 3987681378  },
-// ];
+//   let users = [
+//     { name: "Georgiy", balance: 1736582656657 },
+//     { name: "Tatiana", balance: 1567585875 },
+//     { name: "Bogdan", balance: 0.01 },
+//   ];
 
-// function getTotalBalance(usersArray) {
-//   let totalBalance = 0;
-
-//   for (let i = 0; i < usersArray.length; i++) {
-//     totalBalance += usersArray[i].balance;
-//   }
-
-//   return totalBalance;
-// }
-
-// console.log("Total Balance of All Users: $" + getTotalBalance(users));
-
-// Отримати загальну суму балансу (поле balance) всіх користувачів.
-
+//   let totalBalance = users.reduce((accumulator, user) => accumulator + user.balance, 0);
+  
+//   console.log("Total balance of all users: $" + totalBalance);
 // task 2
 
+let users = [
+        { name: "Georgiy", friends: ["Max", "Nikita"] },
+        { name: "Tatiana", friends: ["vika", "nika", "sasha"] },
+        { name: "Bogan", friends: ["dasha", "Max"] },
+  ];
 
+  let friendNameToFind = "Max";
 
-// let users = [
-//   {ownerName: "Georgiy Chikilyov", accountNumber: "F6G7D0", balance: 4720988769, friends: ["Max", "Nikita"] },
-//   {ownerName: "Tatiana Chikilyov", accountNumber: "F97G9R", balance: 3987681378 , friends: ["arhtet", "yshrt"] },
-//   //кти користувачів за потреби
-// ];
+  let usersWithFriend = users.reduce((accumulator, user) => {
+    if (user.friends.includes(friendNameToFind)) {
+      accumulator.push(user.name);
+    }
+    return accumulator;
+  }, []);
 
-// function getUsersWithFriend(usersArray, friendName) {
-//   let filteredUsers = usersArray.filter(user => user.friends.includes(friendName));
-
-//   return userNames;
-// }
-
-// let friendNameToFind = "Jane";
-
-// let usersWithFriend = getUsersWithFriend(users, friendNameToFind);
-
-// console.log("Users with friend " + friendNameToFind + ": " + usersWithFriend);
-
-// Масив імен всіх користувачів у яких є друг із зазначеним ім'ям.
-
+  console.log("Users with friend " + friendNameToFind + ": " + usersWithFriend);
 // task 3
 
 // let people = [
